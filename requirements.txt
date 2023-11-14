@@ -1,0 +1,6 @@
+scikit-learn
+datasets
+evaluate
+transformers>=4.25.1
+sentencepiece
+protobuf<=3.20.3
