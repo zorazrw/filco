@@ -3,11 +3,11 @@
 
 <p align="left">
   <a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-green.svg"></a>
-  <a href="https://arxiv.org/abs/2311.xxxxx"><img src="https://img.shields.io/badge/arXiv-2311.xxxxx-b31b1b.svg"></a>
+  <a href="https://arxiv.org/abs/2311.08377"><img src="https://img.shields.io/badge/arXiv-2311.08377-b31b1b.svg"></a>
 </p>
 
 This repository contains the code and data about the project:
-[Learning to Filter Context for Retrieval-Augmented Generation]()
+[Learning to Filter Context for Retrieval-Augmented Generation](https://arxiv.org/pdf/2311.08377.pdf)
 
 ## Install
 
@@ -153,7 +153,7 @@ If you find our paper or code useful, please cite the paper
 @article{wang2023learning,
   title={Learning to Filter Context for Retrieval-Augmented Generation},
   author={Zhiruo Wang, Jun Araki, Zhengbao Jiang, Md Rizwan Parvez, Graham Neubig},
-  journal={arXiv preprint arXiv:2311.xxxx},
+  journal={arXiv preprint arXiv:2311.08377},
   year={2023}
 }
 ```
