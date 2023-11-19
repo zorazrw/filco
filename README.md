@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 
 Retrieve top relevant Wikipedia passages using [Dense Passage Retriever (DPR)](https://github.com/facebookresearch/DPR)
-and store into the `./datasets/${name}` directory. We also provide a preprocess version that you can download [(available soon!)]().
+and store into the `./datasets/${name}` directory. We also provide preprocessed datasets with top-5 retrieved passages [(here)](https://drive.google.com/file/d/13z_qrVOBlgu75IJBpX-1vMSCC6hC9yH4/view?usp=sharing).
 We specify `${name}` for six datasets with ['nq', 'tqa', 'hotpotqa', 'fever', 'wow'] in following example commands.
 
 ## Measure Retrieved Passages
@@ -32,8 +32,8 @@ as well as individual sentences within, for example:
 
 ```bash
 python measure_ctxs.py \
---dataset_path "./datasets/NQ/test.json" \
---output_path  "./datasets/NQ/test_scored.json" \
+--dataset_path "./datasets/nq/base/test.json" \
+--output_path  "./datasets/nq/scored/test.json" \
 --metric_name  "strinc" "lexical" "cxmi" \
 --n_contexts 5 \
 --prefix "Given the ['context', 'question'], predict the answer to the question:"
@@ -49,8 +49,8 @@ For the _context filtering task_, the input should be all top-K retrieved passag
 
 ```bash
 python get_inputs.py \
---dataset_path ./datasets/nq/base/train.json \
---output_path ./datasets/nq/mctx/em/train_em_top1.json \
+--dataset_path "./datasets/nq/scored/train.json" \
+--output_path "./datasets/nq/mctx/em/train_em_top1.json" \
 --input_list question passage --output_list filtered \
 --n_examples 0 --n_contexts 1 \
 --filter_criteria strinc --print_example
@@ -62,8 +62,8 @@ For the _generation task_, the input should be filtered context, and output is t
 
 ```bash
 python get_inputs.py \
---dataset_path ./datasets/nq/base/train.json \
---output_path ./datasets/nq/mgen/em/train_em_top1.json \
+--dataset_path "./datasets/nq/scored/train.json" \
+--output_path "./datasets/nq/mgen/em/train_em_top1.json" \
 --input_list question filtered --output_list answer \
 --n_examples 0 --n_contexts 1 \
 --filter_criteria strinc --print_example
