@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 
 Retrieve top relevant Wikipedia passages using [Dense Passage Retriever (DPR)](https://github.com/facebookresearch/DPR)
-and store into the `./datasets/${name}` directory. We also provide a preprocess verion that you can download [(available soon!)]().
+and store into the `./datasets/${name}` directory. We also provide a preprocess version that you can download [(available soon!)]().
 We specify `${name}` for six datasets with ['nq', 'tqa', 'hotpotqa', 'fever', 'wow'] in following example commands.
 
 ## Measure Retrieved Passages
