@@ -44,7 +44,7 @@ def main():
         if args.tokenizer_name_or_path is None:
             args.tokenizer_name_or_path = args.model_name_or_path
         tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_name_or_path)
-        model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path, cache_dir="/scratch/zhiruow", torch_dtype=torch.bfloat16)
+        model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path, cache_dir=args.cache_dir, torch_dtype=torch.bfloat16)
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model = model.to(device)
         model.eval()
@@ -133,6 +133,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--tokenizer_name_or_path", type=str, default="google/flan-t5-xl"
     )
+    parser.add_argument("--cache_dir", type=str, default=None)
     # logging
     parser.add_argument("--report_steps", type=int, default=500)
     args = parser.parse_args()
