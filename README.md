@@ -1,5 +1,5 @@
 
-# FilCo (:books: :books: :books:) &rarr; :page_with_curl:
+# FilCo
 
 <p align="left">
   <a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-green.svg"></a>
