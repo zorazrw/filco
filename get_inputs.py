@@ -56,7 +56,7 @@ def get_sent(
     for idx in range(n_contexts):
         if criteria == "strinc":
             for sent_dict in example["ctxs"][idx]["sentences"]:
-                if sent_dict[criteria] is True:
+                if sent_dict[criteria]:
                     sentences.append(sent_dict["text"])
                     # break
         else:
